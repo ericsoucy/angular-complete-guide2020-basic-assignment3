@@ -28,8 +28,8 @@
       <p *ngIf="display">Secret Password = tuna</p>
       <p
         *ngFor="let click of clicks"
-        [ngStyle]="{ backgroundColor: getColor() }"
-        [ngClass]="{ online: clicks.length > 4 }"
+        [ngStyle]="{ backgroundColor: getColor(click) }"
+        [ngClass]="{ online: click > 4 }"
       >
         {{ click }}
       </p>

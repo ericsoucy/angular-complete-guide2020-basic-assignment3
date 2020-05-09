@@ -14,13 +14,14 @@ import { Component } from "@angular/core";
 export class AppComponent {
   display = false;
   clicks = [];
+  count = 0;
 
   buttonClicked() {
     this.display = !this.display;
-    this.clicks.push("clicked: " + Date.now());
+    this.clicks.push(this.count++);
   }
 
-  getColor() {
-    return this.clicks.length > 4 ? "blue" : "none";
+  getColor(click) {
+    return click > 4 ? "blue" : "none";
   }
 }
